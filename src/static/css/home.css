@@ -1,0 +1,184 @@
+.home-container {
+    padding: 20px;
+    background-color: #F1E7E7;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    background: url("/static/img/background1.jpg");
+    background-size: cover;
+}
+
+.top-section {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    max-width: 50%;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid white;
+}
+
+.top-section p {
+    color: lightgray;
+}
+
+.slider-container {
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.book-card {
+    width: 300px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.arrow:first-child {
+    left: 0;
+}
+
+.arrow:last-child {
+    right: 0;
+}
+
+.bottom-section {
+    display: flex;
+    gap: 50px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.reviews-section, .genres-section {
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border: 3px solid white;
+}
+
+/* Ortak scrollable-box stilleri */
+.scrollable-box {
+    height: 200px;
+    overflow-y: auto;
+}
+
+/* WebKit Scrollbar (Chrome, Safari, Edge) */
+.scrollable-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.3); /* Track rengi */
+    border-radius: 10px;
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+    background-color: saddlebrown; /* Scrollbar rengi */
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3); /* İsteğe bağlı: Thumb kenarı */
+}
+
+/* Firefox desteği */
+.scrollable-box {
+    scrollbar-width: thin;
+    scrollbar-color: saddlebrown rgba(255, 255, 255, 0.3);
+}
+
+
+#reviewsContainer.scrollable-box {
+    background-color: rgba(139, 69, 19, 0.5); 
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#genresContainer.scrollable-box {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.review-card {
+    border: 1px solid white;
+    padding: 10px 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.reviews-section h3, .genres-section h3 {
+    text-align: center;
+    border-bottom: 1px solid white; /* Alt çizgiyi beyaz yap */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 auto;
+    width: fit-content;
+    text-align: left;
+}
+
+li {
+    margin: 8px 0;
+    border: 2px solid dimgray;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(139, 69, 19, 0.3);
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.review-card p {
+    color: white;
+}
+
+p strong {
+    color: lightgoldenrodyellow;
+}
+

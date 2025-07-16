@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}?v=3">
+{% endblock %}
+
+{% block content %}
+<div class="home-container">
+
+    <!-- EN SEVİLENLER SLIDER -->
+    <div class="top-section">
+        <h2>EN SEVİLENLER</h2>
+        <div class="slider-container">
+            <button class="arrow" onclick="slideLeft()">&#8592;</button>
+                <div class="slider" id="bookSlider">
+                    <!--Kitaplar Javascript ile eklenecel-->
+                </div>
+            <button class="arrow" onclick="slideRight()">&#8594;</button>
+        </div>
+    </div>
+
+    <!-- İNCELEMELER & TÜRLER -->
+    <div class="bottom-section">
+        <div class="reviews-section">
+            <h3>İNCELEME</h3>
+            <div id="reviewsContainer" class="scrollable-box"></div>
+        </div>
+
+        <div class="genres-section">
+            <h3>KİTAP TÜRLERİ</h3>
+            <div class="scrollable-box">
+                <ul id="genresContainer"></ul>
+            </div>
+        </div>
+</div>
+
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

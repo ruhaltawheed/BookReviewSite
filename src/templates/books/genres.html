@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/genres.css' %}?v=4">
+{% endblock %}
+{% block content %}
+
+<div class="genre-detail-container">
+        <div class="navb">
+            <h2>{{ genre_name }} Kitapları</h2>
+        </div>
+        <div class="book-grid">
+        {% for book in books %}
+            <div class="book-box">
+                <a href="{% url 'book_detail' book.book_id %}">
+                    <img src="{{ book.cover_images.url }}" alt="{{ book.title }}" class="book-cover">
+                    <h3 class="book-title">{{ book.title }}</h3>
+                </a>
+                <p><strong>Yazar:</strong> 
+                    {% for author in book.bookauthor_set.all %}
+                        {{ author.author.name }} {{ author.author.surname }}
+                        {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                </p>
+            </div>
+        {% endfor %}
+        </div>
+        
+</div>
+{% endblock %}
+

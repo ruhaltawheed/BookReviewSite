@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/favorites.css' %}?v=9">
+{% endblock %}
+
+{% block content %}
+
+    <div class="favorites-container">
+        <div class="navb">
+            {% if favorite_user %}
+                <h2> <span> {{ favorite_user.username }} </span> Kişisinin Favori Kitapları</h2>
+            {% else %}
+                <h2>Favori Kitaplarım</h2>
+            {% endif %}
+        </div>
+        {% if favorite_books %}
+            <div class="favorite-books-list">
+                {% for favorite in favorite_books %}
+                    <div class="favorite-book-card">
+                        <img src="{{ favorite.book.cover_images.url }}" alt="{{ favorite.book.title }}" class="favorite-book-cover">
+                        <div class="favorite-book-details">
+                            <a href="{% url 'book_detail' favorite.book.book_id %}" >
+                                <h3>{{ favorite.book.title }}</h3>
+                                <p><strong>Yazar:</strong> 
+                                    {% for author in favorite.book.bookauthor_set.all %}
+                                        {{ author.author.name }} {{ author.author.surname }}{% if not forloop.last %}, {% endif %}
+                                    {% endfor %}
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p style="color: white;">Henüz favori kitap eklemedi.</p>
+        {% endif %}
+    </div>
+
+{% endblock %}

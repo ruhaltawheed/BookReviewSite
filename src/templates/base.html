@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MyBookShelf</title>
+
+	<!--Bootstrap-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+	<!--Font Awesome-->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+	<!--CSS-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}?v=2">
+	{% block extra_css %}{% endblock %}
+</head>
+
+<body>
+	<nav class="navbar">
+	  <a href="{% url 'home' %}" class="logo">
+	    <img src="{% static 'img/Logo.png' %}" alt="MyBookShelf Logo" class="logo-img" style="height: 130px; width: auto; max-height: 130px; object-fit: contain;">
+	  </a>
+
+	  <div class="nav-links">
+	    {% if user.is_authenticated %}
+	      <a href="#"><span><i class="fa-solid fa-user"></i> {{user.username}}</span></a>
+	      <a href="{% url 'books' %}">Kitaplar</a>
+	      <a href="{% url 'favorites' %}">Favoriler</a>
+	      <a href="{% url 'friends_page' %}">Arkadaşlar</a>
+	      <a href="{% url 'logout' %}">Çıkış</a>
+	    {% else %}
+	      <a href="{% url 'books' %}">Kitaplar</a>
+	      <a href="{% url 'login' %}">Giriş</a>
+	      <a href="{% url 'register' %}">Kayıt Ol</a>
+	    {% endif %}
+	  </div>
+	</nav>
+
+	<main>
+		{% block content %}
+		
+		{% endblock %}
+	</main>
+
+<!--JS-->
+<script type="js/base.js"></script>
+
+{% block extra_js %} {% endblock %}
+
+</body>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <h4>Sudem Delikaya</h4>
+            <p>&copy; 2025 Tüm Hakları Saklıdır.</p>
+        </div>
+    </div>
+</footer>
+</html>

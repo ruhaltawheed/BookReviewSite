@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/friends.css' %}?v=7">
+{% endblock %}
+
+{% block content %}
+
+<div class="friends-container">
+    <div class="navb">
+        <h2>Arkadaşlar</h2>
+        <form method="get" action="{% url 'friends_page' %}">
+            <input type="text" name="q" placeholder="Arkadaş ara..." value="{{ query }}">
+            <button type="submit">Ara</button>
+        </form>
+    </div>
+    {% if query %}
+        <h3 class="follow-heading navb">Arama Sonuçları</h3>
+        <div class="scroll-container">
+            <div class="scroll-column">
+                {% for user in users %}
+                    <div class="user-card">
+                        <p>{{ user.username }}</p>
+                        {% if user != request.user %}
+                            {% if user.user_id in followed_user_ids %}
+                                <a style="color: lightgray; font-style: italic; background-color: hsla(25, 60%, 25%, 0.3);">Takip Ediliyor</a>
+                            {% else %}
+                                <a href="{% url 'follow_user' user.user_id %}">Takip Et</a>
+                            {% endif %}
+                            <a href="{% url 'user_favorites' user.user_id %}">Favori Kitapları Gör</a>
+                        {% endif %}
+                    </div>
+                {% empty %}
+                    <p>Sonuç bulunamadı.</p>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <!-- Takip Bölümleri -->
+        <div class="follow-sections-wrapper">
+
+            <!-- Takip Ettiklerim -->
+            <div class="follow-section">
+                <h3 class="follow-heading navb">Takip Ettiklerim</h3>
+                <div class="scroll-container">
+                    <div class="scroll-column">
+                        {% for follow in following %}
+                            <div class="follow-card">
+                                <p>{{ follow.following.username }}</p>
+                                <a href="{% url 'unfollow_user' follow.following.user_id %}">Takipten Çık</a>
+                                <a href="{% url 'chat_with_friend' follow.following.user_id %}" class="chat-btn">Mesaj Gönder</a>
+                                <a href="{% url 'user_favorites' follow.following.user_id %}">Favori Kitapları Gör</a>
+                            </div>
+                        {% empty %}
+                            <p>Henüz kimseyi takip etmiyorsunuz.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Takip Edenler -->
+            <div class="follow-section">
+                <h3 class="follow-heading navb">Takip Edenler</h3>
+                <div class="scroll-container">
+                    <div class="scroll-column">
+                        {% for follower in followers %}
+                            <div class="follow-card">
+                                <p>{{ follower.follower.username }}</p>
+                                <a href="{% url 'chat_with_friend' follower.follower.user_id %}" class="chat-btn">Mesaj Gönder</a>
+                                <a href="{% url 'user_favorites' follower.follower.user_id %}">Favori Kitapları Gör</a>
+                            </div>
+                        {% empty %}
+                            <p>Henüz kimse sizi takip etmiyor.</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    {% endif %}
+</div>
+{% endblock %}

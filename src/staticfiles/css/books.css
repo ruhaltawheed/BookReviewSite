@@ -1,0 +1,81 @@
+.navb {
+    color: #fff;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: radial-gradient(circle,rgba(255, 205, 158, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.navb form {
+    display: flex;
+    gap: 10px;
+}
+
+.navb input[type="text"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.navb button {
+    padding: 8px 12px;
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.container1 {
+    background: url("/static/img/background.jpg");
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.container1 a {
+    text-decoration: none;
+}
+
+.container1 h3 {
+  color: saddlebrown;
+  font-size: 1.2rem;    
+  letter-spacing: 0.5px;        
+  transition: color 0.3s ease;
+}
+
+.container1 h3:hover {
+  color: #EAC696;   
+} 
+
+.container1 p {
+    font-size: 1rem;
+    color: gray;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background-color: hsla(30, 100%, 70%, 0.3);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    margin: 20px 15px;
+    box-shadow: 
+      #113946 0px 0px 0px 3px,
+      #F1E7E7 0px 0px 0px 6px,
+      #FFFFFF 0px 0px 0px 9px,
+      #113946 0px 0px 0px 12px,
+      #F1E7E7 0px 0px 0px 15px;
+}
+
+.cover-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}

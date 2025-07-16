@@ -1,0 +1,196 @@
+ .book-detail-container {
+    padding: 20px;
+    font-family: 'Georgia', serif;
+    background: url("/static/img/background.jpg");
+    background-size: cover;
+}
+
+.book-info-box {
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(circle,rgba(255, 205, 158, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-info-box .book-cover {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.book-info-box .book-details {
+    max-width: 600px;
+}
+
+.book-info-box .book-details h2 {
+    margin-top: 0;
+    color: white;
+}
+
+.book-info-box .book-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: white;
+}
+
+/* Yorum Kutusu ve Kaydırılabilir Alan */
+.reviews-section {
+    margin-top: 30px;
+}
+
+.reviews-section h3 {
+    text-align: center;
+    color: saddlebrown;
+    border-bottom: 2px solid saddlebrown;
+    padding-bottom: 5px;
+}
+
+.review-box {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #e0c5a8;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.1);
+    margin-top: 20px;
+}
+
+.review-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.review-card p {
+    font-size: 1.1rem;
+    margin: 5px 0;
+}
+
+.rating {
+    font-size: 1.4rem;
+    color: #c49b63;
+    margin-top: 10px;
+}
+
+/* Yorumlara Yorumlar */
+.comments-section {
+    margin-top: 12px;
+    padding-left: 15px;
+    border-left: 3px solid #cdb79e;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.comments-section h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #8b5c33;
+}
+
+.comment-card {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.comment-card p {
+    font-size: 1rem;
+}
+
+.comment-card strong {
+    font-weight: bold;
+}
+
+/* Yorum Formu */
+.review-form-section {
+    margin-top: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.review-form-section h3 {
+    text-align: center;
+    color: #6d4c41;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.review-form .form-group {
+    margin-bottom: 15px;
+}
+
+.review-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #4e342e;
+}
+
+.review-form input[type="number"],
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    font-family: 'Georgia', serif;
+}
+
+.review-form textarea {
+    resize: vertical;
+}
+
+.favorite-btn {
+    display: inline-block;
+    background-color: white;
+    color: #8d6e63;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Georgia', serif;
+}
+
+.favorite-btn:hover {
+    background-color: #8d6e63;
+    color: white;
+}
+
+.submit-btn {
+    display: inline-block;
+    background-color: #8d6e63;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Georgia', serif;
+}
+
+.submit-btn:hover {
+    background-color: #795548;
+}
+
+.login-prompt {
+    font-style: italic;
+    text-align: center;
+    margin-top: 20px;
+}
+
+

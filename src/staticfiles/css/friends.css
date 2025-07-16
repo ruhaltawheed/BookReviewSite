@@ -1,0 +1,120 @@
+.scroll-container {
+    min-height: 300px;       
+    overflow-y: auto;       
+    padding: 10px;
+    background-color: hsla(200, 100%, 50%, 0.1); 
+    border-radius: 12px;
+    max-width: 1080px;       
+    margin: 0 auto;       
+}
+
+/* Grid düzen: 3 sütun, 20px boşluk */
+.scroll-column {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Kart stili */
+.follow-card, .user-card {
+    background-color: hsla(30, 100%, 70%, 0.4);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 120px;
+}
+
+.follow-card:hover, .user-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.15),
+        0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.follow-card p, .user-card p {
+    color: white;
+    border-bottom: 1px solid white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.follow-card a, .user-card a {
+    display: block;
+    margin: 5px 0;
+    padding: 5px 10px;
+    background-color: #8d6e63;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.follow-card a:hover, .user-card a:hover {
+    background-color: #795548;
+}
+
+/* Navbar */
+.navb {
+    color: #fff;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: radial-gradient(circle, rgba(255, 205, 158, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.navb form {
+    display: flex;
+    gap: 10px;
+}
+
+.navb input[type="text"] {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.navb button {
+    padding: 8px 12px;
+    background-color: saddlebrown;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Ana içerik container */
+.friends-container {
+    color: #fff;
+    padding: 10px 30px;
+    background: url("/static/img/background.jpg");
+    background-size: cover;
+}
+
+/* Başlıklar */
+.follow-heading {
+    width: 100%;
+    max-width: 1080px;
+    color: white;
+    margin: 20px auto 10px auto;
+    text-align: center;
+}
+
+/* Takip bölümleri wrapper: yan yana, responsive */
+.follow-sections-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Daralınca alt satıra geçer */
+    margin: 20px 0;
+}
+
+/* Her bölüm */
+.follow-section {
+    flex: 1 1 400px;
+    max-width: 1080px;
+}

@@ -1,0 +1,187 @@
+/* Chat Container */
+.container {
+    background-size: cover;
+    min-height: 50vh;
+    background: url("/static/img/background6.jpg");
+    border-radius: 10px;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 500px;
+    max-height: 600px;
+    margin: 30px auto;
+    padding: 20px 25px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 20px;
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08),
+        0 12px 30px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid white; 
+    color: white;
+    padding: 15px;
+    border-radius: 16px 16px 0 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Chat Box */
+.chat-box {
+    margin-top: 20px;
+    height: 60vh;       /* sabit yükseklik, istersen 60vh yerine px de verebilirsin */
+    overflow-y: auto;   /* dikey scroll */
+    padding-right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Scrollbar styling for Webkit browsers */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #8d6e63;
+    border-radius: 10px;
+}
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: #795548;
+}
+
+/* Individual message styles */
+.message {
+    padding: 14px 18px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    font-size: 1rem;
+    line-height: 1.3;
+    position: relative;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.06);
+    display: inline-block;
+}
+
+/* Sent messages aligned right with greenish background */
+.message.sent {
+    background-color: #DCF8C6;
+    color: #4a4a4a;
+    align-self: flex-end;
+    text-align: right;
+    border-bottom-right-radius: 4px;
+}
+
+/* Received messages aligned left with white background and border */
+.message.received {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    color: #5a5a5a;
+    align-self: flex-start;
+    text-align: left;
+    border-bottom-left-radius: 4px;
+}
+
+/* Sender name styling */
+.message p strong {
+    color: saddlebrown;
+    font-weight: 700;
+}
+
+/* Timestamp styling */
+.message small {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* Chat form */
+.chat-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Textarea styling */
+textarea {
+    width: 100%;
+    height: 110px;      /* sabit yükseklik */
+    max-height: 110px;  /* aynı yükseklik maksimum */
+    resize: none;       /* yeniden boyutlandırmayı kapattım */
+    padding: 14px 18px;
+    border-radius: 16px;
+    border: 2px solid #cfcfcf;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    outline: none;
+    box-shadow:
+        inset 0 2px 6px rgba(0,0,0,0.05);
+    overflow-y: auto;   /* içerik taşarsa scroll çıkacak */
+}
+
+textarea:focus {
+    border-color: #8d6e63;
+    box-shadow:
+        0 0 8px rgba(141, 110, 99, 0.4);
+}
+
+/* Button Styling */
+button {
+    align-self: flex-end;
+    background-color: #8d6e63;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    box-shadow:
+        0 4px 8px rgba(141, 110, 99, 0.5);
+}
+
+button:hover {
+    background-color: #795548;
+    transform: translateY(-2px);
+}
+
+button:active {
+    background-color: #6b4f40;
+    transform: translateY(0);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .chat-container {
+        padding: 15px 20px;
+    }
+    .chat-header {
+        font-size: 1.2rem;
+    }
+    .message {
+        max-width: 85%;
+    }
+    textarea {
+        height: 90px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

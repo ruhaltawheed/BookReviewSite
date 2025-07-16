@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/books.css' %}?v=10">
+{% endblock %}
+
+{% block content %}
+
+<div class="container1">
+    <div class="navb">
+        <h2>Kitaplık</h2>
+        <form method="get" action="{% url 'books' %}">
+            <input type="text" name="q" placeholder="Kitap ara..." value="{{ request.GET.q }}">
+            <button type="submit">Ara</button>
+        </form>
+    </div>
+    {% if books %}
+        <div class="book-grid">
+            {% for book in books %}
+                <div class="book-card">
+                    <a href="{% url 'book_detail' book.book_id %}">
+                        <img src="{{ book.cover_images.url }}" class="cover-img" alt="Kapak">
+                        <h3>{{ book.title }}</h3>
+                    </a>
+                    <p><strong>Yazar:</strong> 
+                        {% for author in book.bookauthor_set.all %}
+                            {{ author.author.name }} {{ author.author.surname }}
+                            {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Hiç kitap bulunamadı.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
